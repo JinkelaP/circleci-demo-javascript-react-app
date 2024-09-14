@@ -11,7 +11,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
-      - run:
+      - node/run:
           command: yarn test
           name: Run tests
       - run:
