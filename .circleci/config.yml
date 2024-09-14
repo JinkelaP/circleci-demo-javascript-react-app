@@ -19,6 +19,8 @@ jobs:
       name: node/default
     steps:
       - checkout
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           command: yarn build
           name: Build app
