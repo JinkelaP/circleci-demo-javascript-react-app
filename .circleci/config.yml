@@ -15,7 +15,10 @@ jobs:
           command: yarn test
           name: Run tests
   build:
+    executor:
+      name: node/default
     steps:
+      - checkout
       - run:
           command: yarn build
           name: Build app
@@ -39,9 +42,9 @@ workflows:
       - build:
           requires:
             - test
-          filters:
-            branches:
-              ignore: dev
+          # filters:
+          #   branches:
+          #     ignore: dev
       # Follow instructions here to authenticate git for Heroku: https://devcenter.heroku.com/articles/git#http-git-authentication
       # The following code may be uncommented, onnce HEROKU_API_KEY & HEROKU_APP_NAME environemnt variables are present
       # Read more: https://circleci.com/docs/2.0/env-vars/
