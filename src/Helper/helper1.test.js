@@ -1,5 +1,5 @@
-// import add from './helper1';
-const {add, minus} = require('./helper1');
+import {add,minus} from './helper1';
+// const {add, minus} = require('./helper1');
 
 
 test('adds 1 + 2 to equal 3', () => {
