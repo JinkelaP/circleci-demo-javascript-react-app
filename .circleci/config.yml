@@ -56,7 +56,6 @@ workflows:
       - build:
         requires:
         - test
-        - hello_world
 
           # filters:
           #   branches:
