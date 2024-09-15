@@ -49,6 +49,8 @@ workflows:
     jobs:
       - hello_world
       - test
+      - build: 
+        requires: test
 
           # filters:
           #   branches:
