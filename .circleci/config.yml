@@ -50,7 +50,7 @@ workflows:
       - hello_world
       - test
       - build: 
-        requires: test
+          requires: test
 
           # filters:
           #   branches:
