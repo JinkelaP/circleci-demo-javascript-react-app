@@ -54,9 +54,8 @@ workflows:
             only: master
 
       - build:
-        requires:
-          - test
-          - hello_world
+        requires: test
+        requires: hello_world
 
           # filters:
           #   branches:
