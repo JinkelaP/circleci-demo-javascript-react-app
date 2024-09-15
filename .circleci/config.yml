@@ -49,13 +49,14 @@ workflows:
     jobs:
       - hello_world
       - test:
-        filters:
-          branchers:
-            only: master
+          filters:
+            branches:
+              only: master
 
       - build:
-        requires: test
-        requires: hello_world
+        requires:
+        - test
+        - hello_world
 
           # filters:
           #   branches:
