@@ -48,10 +48,7 @@ workflows:
   on_commit:
     jobs:
       - hello_world
-      - test:
-          filters:
-            branches:
-              only: master
+      - test
 
           # filters:
           #   branches:
