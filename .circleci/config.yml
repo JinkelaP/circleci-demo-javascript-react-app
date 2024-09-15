@@ -4,6 +4,13 @@ orbs:
   heroku: circleci/heroku@1.2.6
 
 jobs:
+  hello_world:
+    executor:
+      name: node/default
+    steps:
+      - run:
+          name: Hello World
+          command: echo "Hello World"
   test:
     executor:
       name: node/default
@@ -40,9 +47,17 @@ jobs:
 workflows:
   on_commit:
     jobs:
-      - test
-      - test
-      - build
+      - hello_world
+      - test:
+        filters:
+          branchers:
+            only: master
+
+      - build:
+        requires:
+          - test
+          - hello_world
+
           # filters:
           #   branches:
           #     ignore: dev
